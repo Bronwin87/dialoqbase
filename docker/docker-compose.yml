@@ -8,7 +8,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      DATABASE_URL: postgres://postgres:postgres@dialoqbase-pg:5432/dialoqbase?connection_limit=15&pool_timeout=0
+      DATABASE_URL: postgresql://postgres:Bronwin@063378@db.pxbgaskmkkrxitrvkkzd.supabase.co:5432/postgres
       DB_REDIS_URL: redis://redis:6379
     env_file:
       - .env
