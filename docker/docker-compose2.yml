@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   dialoqbase:
-    build: ..
+    image: n4z3m/dialoqbase:latest
     container_name: dialoqbase
     restart: unless-stopped
     ports:
