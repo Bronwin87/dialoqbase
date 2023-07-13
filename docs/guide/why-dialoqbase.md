@@ -25,6 +25,7 @@ Here is a list of chat models that are currently supported by dialoqbase:
 
 * claude-1
 * claude-instant-1
+* claude-2
 
 
 ### Google PaLM 2
@@ -70,7 +71,7 @@ Here is a list of data loaders that are currently supported by dialoqbase:
 * text
 * CSV
 * Github repository
-
+* mp3, mp4
 
 ## Vector Search with PostgreSQL
 
