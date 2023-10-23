@@ -17,7 +17,15 @@ export const embeddings = (embeddingsType: string) => {
     case "huggingface-api":
       return new HuggingFaceInferenceEmbeddings();
     case "transformer":
-      return new TransformersEmbeddings();
+      return new TransformersEmbeddings(
+        {
+          model: "Xenova/all-MiniLM-L6-v2",
+        },
+      );
+    case "supabase":
+      return new TransformersEmbeddings({
+        model: "Supabase/gte-small",
+      });
     case "google-gecko":
       console.log("using google-gecko");
       return new GoogleGeckoEmbeddings();
@@ -25,3 +33,13 @@ export const embeddings = (embeddingsType: string) => {
       return new OpenAIEmbeddings();
   }
 };
+
+export const supportedEmbeddings = [
+  "tensorflow",
+  "openai",
+  "cohere",
+  "huggingface-api",
+  "transformer",
+  "google-gecko",
+  "supabase",
+];

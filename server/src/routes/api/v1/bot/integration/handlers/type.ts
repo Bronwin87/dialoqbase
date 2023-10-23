@@ -46,8 +46,8 @@ export type GetIntergationType = {
     description: string;
     help: string;
     requiredMessage: string;
-    value: string;
-    defaultValue: string;
+    value: string | boolean;
+    defaultValue: string | boolean;
   }[];
   isPaused?: boolean;
   status?: string;
@@ -58,3 +58,29 @@ export type GetIntergationType = {
     link: string;
   } | null;
 };
+
+
+export type WhatsAppIntergationType = {
+  Querystring: {
+    "hub.verify_token": string;
+    "hub.mode": string;
+    "hub.challenge": string;
+  }
+}
+
+export type WhatsAppIntergationBodyType = {
+  Params: {
+    id: string;
+  },
+  Headers: {
+    "x-hub-signature": string;
+  }
+  Body: Record<string, any>; 
+}
+
+
+export type GetAPIIntergationRequest  = {
+  Params: {
+    id: string;
+  };
+}

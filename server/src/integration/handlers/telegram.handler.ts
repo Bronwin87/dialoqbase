@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 export const telegramBotHandler = async (
   identifer: string,
   message: string,
-  user_id: number,
+  user_id: number
 ) => {
   try {
     const bot_id = identifer.split("-")[2];
@@ -27,7 +27,7 @@ export const telegramBotHandler = async (
 
     const chat_history = await prisma.botTelegramHistory.findMany({
       where: {
-        chat_id: user_id,
+        new_chat_id: `${user_id}`,
         identifier: identifer,
       },
     });
@@ -36,9 +36,11 @@ export const telegramBotHandler = async (
       chat_history.splice(0, chat_history.length - 10);
     }
 
-    let history = chat_history.map((chat) => {
-      return `Human: ${chat.human}\nAssistant: ${chat.bot}`;
-    }).join("\n");
+    let history = chat_history
+      .map((chat) => {
+        return `Human: ${chat.human}\nAssistant: ${chat.bot}`;
+      })
+      .join("\n");
 
     const temperature = bot.temperature;
 
@@ -50,14 +52,25 @@ export const telegramBotHandler = async (
       {
         botId: bot.id,
         sourceId: null,
-      },
+      }
     );
 
-    const model = chatModelProvider(
-      bot.provider,
-      bot.model,
-      temperature,
-    );
+    const modelinfo = await prisma.dialoqbaseModels.findFirst({
+      where: {
+        model_id: bot.model,
+        hide: false,
+        deleted: false,
+      },
+    });
+
+    if (!modelinfo) {
+      return "Unable to find model";
+    }
+
+    const botConfig = (modelinfo.config as {}) || {};
+    const model = chatModelProvider(bot.provider, bot.model, temperature, {
+      ...botConfig,
+    });
 
     const chain = ConversationalRetrievalQAChain.fromLLM(
       model,
@@ -66,7 +79,7 @@ export const telegramBotHandler = async (
         qaTemplate: bot.qaPrompt,
         questionGeneratorTemplate: bot.questionGeneratorPrompt,
         returnSourceDocuments: true,
-      },
+      }
     );
 
     const response = await chain.call({
@@ -79,7 +92,7 @@ export const telegramBotHandler = async (
     await prisma.botTelegramHistory.create({
       data: {
         identifier: identifer,
-        chat_id: user_id,
+        new_chat_id: `${user_id}`,
         human: message,
         bot: bot_response,
       },
@@ -89,6 +102,7 @@ export const telegramBotHandler = async (
 
     return bot_response;
   } catch (error) {
+    console.log(error);
     return "Opps! Something went wrong";
   }
 };

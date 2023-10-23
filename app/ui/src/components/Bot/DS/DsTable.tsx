@@ -13,7 +13,9 @@ import api from "../../../services/api";
 import { useParams } from "react-router-dom";
 import { NewDsForm } from "./NewDsForm";
 import React from "react";
-import { GithubIcon } from "../../Common/GithubIcon";
+import { GithubIcon } from "../../Icons/GithubIcon";
+import { YoutubeIcon } from "../../Icons/YoutubeIcon";
+import { ApiIcon } from "../../Icons/ApiIcon";
 
 export const DsTable = ({
   data,
@@ -54,6 +56,10 @@ export const DsTable = ({
         return <VideoCameraIcon className="h-10 w-10 text-gray-400" />;
       case "mp3":
         return <PlayCircleIcon className="h-10 w-10 text-gray-400" />;
+      case "youtube":
+        return <YoutubeIcon className="h-10 w-10 text-gray-400" />;
+      case "rest":
+        return <ApiIcon className="h-10 w-10 text-gray-400" />;
       default:
         return <DocumentTextIcon className="h-10 w-10 text-gray-400" />;
     }
@@ -121,7 +127,7 @@ export const DsTable = ({
       <div className="mt-8 flex flex-col">
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+            <div className="overflow-hidden bg-white ring-1 ring-black ring-opacity-5 md:rounded-lg">
               {data.length === 0 && (
                 <Empty description="No data sources found." className="m-8" />
               )}

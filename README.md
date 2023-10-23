@@ -12,27 +12,25 @@
 
 Dialoqbase is an open-source application designed to facilitate the creation of custom chatbots using a personalized knowledge base. The application leverages advanced language models to generate accurate and context-aware responses. Additionally, it utilizes PostgreSQL, a robust relational database management system, for efficient vector search operations and for storing the knowledge base.
 
-> **Warning**
-> This project is a side project and is still under development. Use it at your own risk
-
-Here's a demo of how it works (v0.0.1):
+Here's a demo of how it works (v0.0.23):
 
 <div align="center">
 
-[![DialoqBase Demo](https://img.youtube.com/vi/Kktfs8JI4yI/0.jpg)](https://www.youtube.com/watch?v=Kktfs8JI4yI)
+[![DialoqBase Demo](https://img.youtube.com/vi/D3X3ZIYsT_w/0.jpg)](https://www.youtube.com/watch?v=D3X3ZIYsT_w)
+
 </div>
 
 Want to check more demo videos? Follow me on [Twitter](https://twitter.com/n4ze3m) or [BlueSky](https://bsky.app/profile/n4ze3m.com) for more updates.
 
-## Quick Deployments
+## Quick Deployments 🚀
 
-### Railway with Supabase
+### Railway with Supabase 
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/TXdjD7?referralCode=olbszX)
 
 for more details - [watch demo](https://twitter.com/n4ze3m/status/1668208861663354882)
 
-## Installation
+## Installation 🛠️
 
 1. Clone the repository and navigate to the docker directory:
 
@@ -87,7 +85,7 @@ password: admin
 
 _Important: After the first login, remember to change the default credentials._
 
-## Features
+## Features 🚀
 
 - Create custom chatbots with your own knowledge base
 
@@ -95,7 +93,7 @@ _Important: After the first login, remember to change the default credentials._
 
 - Utilize PostgreSQL for vector search and storing the knowledge base.
 
-## Stack
+## Stack 📚
 
 - [React](https://reactjs.org/)
 - [Ant Design](https://ant.design/)
@@ -107,11 +105,12 @@ _Important: After the first login, remember to change the default credentials._
 - [Rspack](https://rspack.dev)
 - [@waylaidwanderer/fastify-sse-v2](https://github.com/waylaidwanderer/fastify-sse-v2) (Server-Sent Events)
 
-## Disclaimer
+## Disclaimer ⚠️
 
 Dialoqbase is a side project and is not ready for production. It is still in the early stages of development and may contain bugs and security issues. Use it at your own risk. _Breaking changes may occur at any time without prior notice._
 
-## Roadmap
+## Roadmap 🗺️
+
 
 ### Data loaders
 
@@ -120,10 +119,11 @@ Dialoqbase is a side project and is not ready for production. It is still in the
 - [x] PDF (beta)
 - [x] Web crawler (beta)
 - [x] Microsoft Word documents (beta)
-- [ ] Sitemap
 - [x] Github repository
 - [x] mp3
 - [x] mp4
+- [X] Sitemap
+- [x] Youtube
 - [ ] Notion
 
 and more...
@@ -133,8 +133,9 @@ and more...
 - [x] OpenAI
 - [x] Anthropic
 - [x] Google chat-bison-001
-
-open source chatmodels soon...
+- [x] fireworks.ai's llama 2 models
+- [x] fireworks.ai's mistral
+- [X] Local AI models
 
 ### Embedding models
 
@@ -154,34 +155,39 @@ need more ? create an issue...
 - [x] Generate responses
 - [x] Vector search
 - [x] Bot embed script for websites
-- [ ] Supabase Integration
 - [x] Prompt Editor
-- [ ] Chatbot API
+- [X] Chatbot API
 - [x] Chatbot theme editor
-- [ ] Chatbot analytics
-- [ ] UI/UX improvements
-- [X] Streaming responses
+- [x] Streaming responses
 
-### Integrations
+### Integrations 
 
 - [x] Web embed script
 - [x] Telegram (beta)
-- [x] Discord (experimental)
+- [x] Discord (beta)
 - [ ] Slack
-- [ ] Whatsapp
-- [ ] Facebook Messenger
-- [ ] Instagram
+- [X] Whatsapp (experimental)
 
 need more ? create an issue...
 
-## Contributors
+## Contributors ✨
 
 <a href="https://github.com/n4ze3m/dialoqbase/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=n4ze3m/dialoqbase" />
 </a>
 
-
 Interested in contributing? Check out the [contributing guide](CONTRIBUTION.md).
-## License
+
+## Sponsors 💖
+
+<p>
+  <a href="https://flogesoft.com/?utm_source=dialoqbase&utm_medium=sponsor&utm_campaign=dialoqbase">
+    <img src="https://flogesoft.com/images/floges_sponsored.svg" width="150"
+    height="50"
+     />
+  </a>
+</p>
+
+## License 📝
 
 [MIT](LICENSE)

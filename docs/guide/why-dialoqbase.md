@@ -20,6 +20,7 @@ Here is a list of chat models that are currently supported by dialoqbase:
 * gpt-3.5-turbo-16K
 * gpt-4
 * gpt-4-0613
+* gpt-3.5-turbo-instruct
 
 #### Anthropic
 
@@ -31,6 +32,19 @@ Here is a list of chat models that are currently supported by dialoqbase:
 ### Google PaLM 2
 
 * chat-bison-001
+
+
+### Llama via Fireworks.ai
+
+* llama v2 7b
+
+* llama v2 13b
+
+* llama v2 70b
+
+* mistral 7b instruct 4k
+
+Note: In order to use Llama models you need to provide [fireworks.ai](https://fireworks.ai/) API key. You can get a free API key from [here](https://fireworks.ai/).
 
 ### Embedding Models
 
@@ -51,14 +65,18 @@ With dialoqbase, you can create chatbots for multiple platforms.
 
 Using dialoqbase, you can easily embed your chatbot on your website. You can also customize the chatbot to match your website's design.
 
-### Telegram (beta)
+### Telegram 
 
 Integrating telegram with dialoqbase is very easy. You just need to create a telegram bot and provide the token to dialoqbase and dialoqbase will take care of the rest.
 
 
-### Discord (experimental)
+### Discord 
 
 Integrating discord with dialoqbase is very easy. You just need to create a discord bot and provide the token to dialoqbase and dialoqbase will take care of the rest.
+
+## WhatsApp (experimental)
+
+Integrating WhatsApp with dialoqbase is very easy. You just need to create a WhatsApp bot and provide the token to dialoqbase and dialoqbase will take care of the rest.
 
 ## Data Loaders
 
@@ -72,6 +90,7 @@ Here is a list of data loaders that are currently supported by dialoqbase:
 * CSV
 * Github repository
 * mp3, mp4
+* Youtube
 
 ## Vector Search with PostgreSQL
 

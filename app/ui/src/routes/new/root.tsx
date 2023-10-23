@@ -38,10 +38,6 @@ export default function NewRoot() {
   };
   const { mutateAsync: createBot, isLoading } = useMutation(onSubmit, {
     onSuccess: (data: any) => {
-      notification.success({
-        message: "Success",
-        description: "Bot created successfully.",
-      });
       navigate(`/bot/${data.id}`);
     },
     onError: (e) => {
@@ -73,8 +69,8 @@ export default function NewRoot() {
             Create a new bot
           </h2>
         </div>
-        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
+          <div className="bg-white py-8 px-4 border sm:rounded-lg sm:px-10">
             <BotForm
               showEmbeddingAndModels={true}
               createBot={createBot}

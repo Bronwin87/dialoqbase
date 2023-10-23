@@ -1,36 +1,25 @@
 import { FastifySchema } from "fastify";
+import { SUPPORTED_SOURCE_TYPES } from "../../../../../utils/datasource";
 
 export const createBotSchema: FastifySchema = {
   body: {
     type: "object",
-    required: ["content", "type"],
     properties: {
       content: {
         type: "string",
       },
       type: {
         type: "string",
-        enum: ["text", "website", "crawl", "github"],
+        enum: SUPPORTED_SOURCE_TYPES,
       },
       name: {
         type: "string",
       },
       embedding: {
         type: "string",
-        enum: ["tensorflow", "openai", "cohere", "huggingface-api", "transformer", "google-gecko"],
       },
       model: {
         type: "string",
-        enum: [
-          "gpt-3.5-turbo",
-          "gpt-3.5-turbo-16k",
-          "gpt-4-0613",
-          "gpt-4",
-          "claude-1",
-          "claude-2",
-          "claude-instant-1",
-          "google-bison"
-        ],
       },
       maxDepth: {
         type: "number",
@@ -76,7 +65,7 @@ export const addNewSourceByIdSchema: FastifySchema = {
       },
       type: {
         type: "string",
-        enum: ["text", "website", "crawl", "github"],
+        enum: SUPPORTED_SOURCE_TYPES,
       },
       maxDepth: {
         type: "number",
@@ -123,6 +112,18 @@ export const updateBotByIdSchema: FastifySchema = {
       },
       qaPrompt: {
         type: "string",
+      },
+      showRef: {
+        type: "boolean",
+      },
+      use_hybrid_search: {
+        type: "boolean",
+      },
+      bot_protect: {
+        type: "boolean",
+      },
+      use_rag: {
+        type: "boolean",
       },
     },
   },
